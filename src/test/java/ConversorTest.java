@@ -6,14 +6,22 @@ public class ConversorTest {
     Conversor conversor = new Conversor();
 
     @Test
-    public void testeFahrenheitParaCelsius() {
-        double resultado = conversor.fahrenheitParaCelsius(212);
-        assertEquals(100, resultado);
+    public void testeFahrenheitParaCelsiusEbulicao() {
+        assertEquals(100, conversor.fahrenheitParaCelsius(212));
     }
 
     @Test
-    public void testeCelsiusParaFahrenheit() {
-        double resultado = conversor.celsiusParaFahrenheit(100);
-        assertEquals(212, resultado);
+    public void testeFahrenheitParaCelsiusCongelamento() {
+        assertEquals(0, conversor.fahrenheitParaCelsius(32));
+    }
+
+    @Test
+    public void testeCelsiusParaFahrenheitEbulicao() {
+        assertEquals(212, conversor.celsiusParaFahrenheit(100));
+    }
+
+    @Test
+    public void testeCelsiusParaFahrenheitCongelamento() {
+        assertEquals(32, conversor.celsiusParaFahrenheit(0));
     }
 }
